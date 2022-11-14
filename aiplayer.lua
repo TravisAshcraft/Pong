@@ -1,8 +1,9 @@
 AiPlayer = {}
 
 function AiPlayer:load()
-    self.width = 20
-    self.height = 100
+    self.img = love.graphics.newImage("assets/assets/bricks/paddle2_2p.png")
+    self.width = self.img:getWidth()
+    self.height = self.img:getHeight()
 
     self.x = love.graphics.getWidth() - self.width - 50
     self.y = love.graphics.getHeight() / 2
@@ -37,5 +38,5 @@ function AiPlayer:aquireTarget()
 end
 
 function AiPlayer:draw()
-    love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
+    love.graphics.draw(self.img, self.x, self.y)
 end
